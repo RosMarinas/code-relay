@@ -29,6 +29,7 @@ python remote_run.py pip install transformers
 ```
 
 **Features:**
+
 - Wraps `python`/`pytest`/`pip` in `uv run` with configurable `PYTHONPATH` and `HF_ENDPOINT`
 - Strips accidental `uv run` prefixes from agent-generated commands
 - SSH with pseudo-terminal (`-t`) for real-time output streaming
@@ -37,7 +38,7 @@ python remote_run.py pip install transformers
 **Security model:**
 
 | Level | What triggers it | Behavior |
-|-------|-----------------|----------|
+|-------|------------------|----------|
 | Hard-block | Shell metacharacters (`;`, `\|\|`, `` ` ``), I/O redirect (`>`, `<`), system paths (`/etc`, `/root`) | Rejected immediately |
 | Confirm | `rm`, `sudo`, `shutdown`, `docker`, `iptables`, and ~30 others | Prints a warning and asks `[y/N]` |
 | Safe | Everything else | Runs directly |
@@ -80,6 +81,7 @@ Requires `fswatch`: `brew install fswatch`
 All config lives at the top of each script — no config files, no environment variables needed.
 
 **`remote_run.py`:**
+
 ```python
 SERVER = "user@host"               # SSH address
 REMOTE_DIR = "/home/user/project/" # Remote project root
@@ -95,6 +97,7 @@ BLOCKED_PATHS = [...]             # Paths always rejected
 ```
 
 **`sync.sh`:**
+
 ```bash
 LOCAL_DIR="/path/to/local/project/"
 REMOTE_HOST="server_alias"

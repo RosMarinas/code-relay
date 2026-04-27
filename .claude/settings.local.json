@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python3 -c \"import py_compile; py_compile.compile\\('remote_run.py', doraise=True\\)\")",
-      "Bash(python3 -c \"import py_compile; py_compile.compile\\('/Users/polaris/Documents/Graduate/AI/Experiment/sync_scripts/remote_run.py', doraise=True\\)\")",
-      "mcp__ide__getDiagnostics"
-    ]
-  }
-}
